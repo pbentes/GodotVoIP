@@ -1,0 +1,20 @@
+[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://dr43jvdvgkbuo"]
+
+[sub_resource type="AudioEffectCapture" id="AudioEffectCapture_pihug"]
+resource_name = "Capture"
+
+[resource]
+bus/1/name = &"MicSink"
+bus/1/solo = false
+bus/1/mute = true
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Master"
+bus/2/name = &"Mic"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &"MicSink"
+bus/2/effect/0/effect = SubResource("AudioEffectCapture_pihug")
+bus/2/effect/0/enabled = true

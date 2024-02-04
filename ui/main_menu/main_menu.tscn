@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://nw148tplcq6w"]
+
+[ext_resource type="Script" path="res://ui/main_menu/scripts/main_menu.gd" id="1_bwmj7"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bwmj7")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HostIP" type="LineEdit" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Host IP"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HostGame" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Host Game"
+
+[node name="JoinGame" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Join Game"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/HostGame" to="." method="_on_host_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/JoinGame" to="." method="_on_join_game_pressed"]
