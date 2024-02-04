@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dvy8ub5r3mnjc"]
 
-[ext_resource type="Script" path="res://ui/main_scene/Microphone.gd" id="2_h65el"]
+[ext_resource type="Script" path="res://ui/main_scene/scripts/Microphone.gd" id="2_h65el"]
 
 [sub_resource type="SystemFont" id="SystemFont_dukv4"]
 font_names = PackedStringArray("JetBrains Mono NL")
