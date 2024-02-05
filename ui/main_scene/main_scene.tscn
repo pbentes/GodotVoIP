@@ -112,5 +112,3 @@ script = ExtResource("2_h65el")
 [node name="VoIP" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamGenerator_a1tib")
 autoplay = true
-
-[node name="AudioListener3D" type="AudioListener3D" parent="."]
