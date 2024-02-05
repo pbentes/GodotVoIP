@@ -1,7 +1,6 @@
 extends AudioStreamPlayer
 
 var effect: AudioEffectCapture
-var recording
 var playback: AudioStreamGeneratorPlayback
 
 @onready var voip: AudioStreamPlayer = $"../VoIP"
