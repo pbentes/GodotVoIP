@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://ui/main_scene/scripts/microphone.gd" id="2_h65el"]
 
-
 [sub_resource type="SystemFont" id="SystemFont_dukv4"]
 font_names = PackedStringArray("JetBrains Mono NL")
 font_weight = 425
