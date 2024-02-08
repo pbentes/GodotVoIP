@@ -12,6 +12,7 @@ signal server_disconnected
 const PORT: int = 7000
 const DEFAULT_SERVER_IP: String = "127.0.0.1"
 const MAX_CONNECTIONS: int = 20
+const COMPRESSION_ALGO: ENetConnection.CompressionMode = ENetConnection.COMPRESS_ZLIB
 
 var players = {}
 
@@ -34,6 +35,7 @@ func host_game():
 	var error = peer.create_server(PORT, MAX_CONNECTIONS)
 	if error:
 		return error
+	peer.host.compress(COMPRESSION_ALGO)
 	multiplayer.multiplayer_peer = peer
 	
 	players[1] = player_info
@@ -46,6 +48,7 @@ func join_game(address: String):
 	var error = peer.create_client(address, PORT)
 	if error:
 		return error
+	peer.host.compress(COMPRESSION_ALGO)
 	multiplayer.multiplayer_peer = peer
 
 func remove_multiplayer_peer():
