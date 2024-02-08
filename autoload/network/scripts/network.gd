@@ -9,10 +9,10 @@ signal server_disconnected
 
 #endregion
 
-const PORT: int = 7000
-const DEFAULT_SERVER_IP: String = "127.0.0.1"
-const MAX_CONNECTIONS: int = 20
-const COMPRESSION_ALGO: ENetConnection.CompressionMode = ENetConnection.COMPRESS_ZLIB
+@export var DEFAULT_SERVER_IP: String = "127.0.0.1"
+@export var PORT: int = 7000
+@export var MAX_CONNECTIONS: int = 20
+@export var COMPRESSION_ALGO: ENetConnection.CompressionMode = ENetConnection.COMPRESS_RANGE_CODER
 
 var players = {}
 
@@ -97,6 +97,7 @@ func _on_server_disconnected():
 	multiplayer.multiplayer_peer = null
 	players.clear()
 	server_disconnected.emit()
+	get_tree().change_scene_to_file("res://ui/main_menu/main_menu.tscn")
 
 #endregion
 
