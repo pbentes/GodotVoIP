@@ -21,26 +21,26 @@ func _process(_delta):
 
 @rpc("any_peer", "call_remote", "unreliable_ordered", 1)
 func playback_voip(packed_frames: PackedFloat32Array):
-	playback.push_buffer(unpack_mono(packed_frames))
+	playback.push_buffer(mono_to_stereo(packed_frames))
 
-func stereo_to_mono(frames: PackedVector2Array) -> PackedFloat32Array:
-	var float_array = PackedFloat32Array()
-	float_array.resize(frames.size())
+func stereo_to_mono(stereo_frames: PackedVector2Array) -> PackedFloat32Array:
+	var mono_frames = PackedFloat32Array()
+	mono_frames.resize(stereo_frames.size())
 	
 	var i: int = 0
-	for frame: Vector2 in frames:
-		float_array[i] = (frame.x + frame.y) / 2
+	for stereo_frame: Vector2 in stereo_frames:
+		mono_frames[i] = (stereo_frame.x + stereo_frame.y) / 2
 		i += 1
 	
-	return float_array
+	return mono_frames
 
-func unpack_mono(packed_frames: PackedFloat32Array) -> PackedVector2Array:
-	var frames: PackedVector2Array = PackedVector2Array()
-	frames.resize(packed_frames.size())
+func mono_to_stereo(mono_frames: PackedFloat32Array) -> PackedVector2Array:
+	var stereo_frames: PackedVector2Array = PackedVector2Array()
+	stereo_frames.resize(mono_frames.size())
 	
 	var i: int = 0
-	for packed_frame: float in packed_frames:
-		frames[i] = Vector2(packed_frame, packed_frame)
+	for mono_frame: float in mono_frames:
+		stereo_frames[i] = Vector2(mono_frame, mono_frame)
 		i += 1
 	
-	return frames
+	return stereo_frames
