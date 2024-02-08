@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 buses/default_bus_layout="res://voip_setup.tres"
 driver/enable_input=true
 
+[autoload]
+
+Network="*res://autoload/network/network.tscn"
+
 [dotnet]
 
 project/assembly_name="VoIP"
