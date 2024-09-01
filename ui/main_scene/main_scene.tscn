@@ -81,7 +81,7 @@ alignment = 1
 layout_mode = 2
 text = "YouTube"
 underline = 2
-uri = "https://youtube.com/@4musedtv"
+uri = "https://www.youtube.com/@pbentesio"
 
 [node name="Control2" type="Control" parent="MarginContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(30, 0)
@@ -91,7 +91,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Twitter"
 underline = 2
-uri = "https://twitter.com/4musedWasTaken"
+uri = "https://x.com/pbentesio"
 
 [node name="Control" type="Control" parent="MarginContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(30, 0)
@@ -101,7 +101,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Twitch"
 underline = 2
-uri = "https://twitch.tv/4musedtv"
+uri = "https://www.twitch.tv/pbentes"
 
 [node name="Microphone" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamMicrophone_1rv7u")
